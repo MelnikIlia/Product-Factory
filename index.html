@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script>document.documentElement.classList.remove("no-js");</script>
+		<title>Productly</title>
+		
+		<!-- Normalize -->
+		<style type="text/css">
+			/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+			html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{-webkit-box-sizing:content-box;box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{-webkit-box-sizing:border-box;box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+		</style>
+		
+		<!-- Reset -->
+		<style type="text/css">
+			/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 | License: none (public domain) */
+			a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h3,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}a{text-decoration:none}b,strong{font-weight:900}button{background-color:unset;border:none}
+		</style>
+
+		<!-- Fonts -->
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff"
+			href="slick/fonts/slick.woff"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+			crossorigin="anonymous"
+		/>
+
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+				rel="stylesheet"
+				crossorigin="anonymous"
+			/>
+		</noscript>
+
+		<link
+			type="image/png"
+			rel="preload"
+			as="image"
+			href="img/content/hero_image.png"
+			onload="this.load=null;this.rel='stylesheet'"
+		/>
+		
+		<!-- Critical CSS -->
+		<style>
+			*, ::before, ::after{-webkit-box-sizing:border-box;box-sizing:border-box}body{font-family:"Noto sans",sans-serif;font-weight:400;text-align:left;color:#000;}body.lock{overflow:hidden}.image-wrapper{height:100%;display:block}.image-wrapper img,.image-wrapper picture{width:100%}.container{width:100%;padding:0 25px;overflow-x:hidden}.row{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-wrap:wrap;flex-wrap:wrap}.column{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%}.d-flex{display:flex}.space-between{justify-content:space-between}.section-wrapper{padding:0 8.21917808219178%;}.card{background-color:#fff;border-radius:30px;box-shadow:30px 30px 60px rgba(34,34,34,.08)}.button{padding:20px 120px;color:#fff;border:none;cursor:pointer}.button--call-to-action{font-size:18px;font-weight:700;border-radius:15px;background-color:#f46632;transition:background-color .3s linear}.button--call-to-action:hover{background-color:#d7430d}.brand-logo,.button--burger-menu,.nav__menu{position:relative;z-index:2}.brand-logo{display:block;margin-bottom:20px;text-align:center}.nav{flex-direction:column;padding:50px 0 55px 0;align-items:center}.nav::before{content:"";display:block;width:100%;height:158px;position:absolute;top:0;left:0;background-color:#000;z-index:2}.nav__menu{display:block;width:100%;height:100%;padding:0 25px;position:absolute;top:-100%;left:0;background-color:#000;z-index:1;transition:top .3s ease-out}.nav__menu.toggle{top:0;padding-top:158px}.nav__menu-item{display:block;margin:20px 0}.nav__menu-link{font-size:24px;color:#fff}.nav__buttons{align-items:center}.nav__button--register{display:inline-block;width:-webkit-max-content;width:-moz-max-content;width:max-content;padding:10px 40px;color:#fff;background-color:rgba(255,255,255,.1);border-radius:25px;position:relative;z-index:2}.button--burger-menu{display:inline-block;margin-left:30px;width:30px;height:20px;vertical-align:sub;position:relative;z-index:2;cursor:pointer}.button--burger-menu span,.button--burger-menu::after,.button--burger-menu::before{content:"";width:100%;height:2px;background-color:#fff;position:absolute;top:0;left:0}.button--burger-menu span{top:49%;transition:transform .2s linear}.button--burger-menu::after{top:100%}.button--burger-menu::after,.button--burger-menu::before{transition:top .2s linear .2s,transform .2s linear}.button--burger-menu.active span{transform:scale(0);transition:transform .2s linear .1s}.button--burger-menu.active::after,.button--burger-menu.active::before{top:49%;transition:top .2s linear,transform .2s linear .2s}.button--burger-menu.active::before{transform:rotate(45deg)}.button--burger-menu.active::after{transform:rotate(-45deg)}.hero{padding:70px 15px;margin-bottom:250px}.hero .button{padding:20px 0;width:100%}.hero::before{content:"";display:block;width:100%;height:600px;position:absolute;top:158px;left:0;background-color:#000;z-index:-1}.hero__title{margin-bottom:15px;font-weight:700;font-size:36px;text-align:left;color:#000}.hero__subtitle{position:relative;padding-bottom:100px;font-weight:400;font-size:26px;color:#8d8d8d}.hero__subtitle::before{content:"";position:absolute;top:0;left:0;display:block;width:100%;height:100%;background:url(img/ui_ux.png) center no-repeat;background-size:contain}.hero__text{margin-bottom:70px;font-weight:400;font-size:22px;line-height:40px}
+		</style>
+
+		<style media="screen and (min-width: 400px)">
+			nav .brand-logo{display:inline-block;margin-right:calc(100% - 334px);margin-bottom:0;vertical-align:middle;text-align:left}.nav__buttons{display:inline-block}
+		</style>
+
+		<style media="screen and (min-width: 481px)">
+			.container{padding:0 11.979166666666668%}.nav__menu{padding: 0 11.979166666666668%}
+		</style>
+
+		<style media="screen and (min-width: 800px)">
+			.nav__menu{height:auto}.nav__menu-item{display:inline-block;margin:0 20px 20px 0}
+		</style>
+
+		<style media="screen and (min-width: 1024px)">
+			.hero{padding-top:110px;padding-bottom:110px}.hero__column{flex-basis: 47%;}
+		</style>
+
+		<style media="screen and (min-width: 1331px)">
+			nav .brand-logo{margin:0 10px 0 0}.button--burger-menu{display:none}.nav__menu{display:inline-block;width:calc(100% - 287px);padding:0;position:relative;z-index:3}.nav__menu.toggle{padding:0}.nav__menu-item{display:inline-block;margin-right:3.64583%}.nav__menu-item:last-child{margin-right:0}.nav__menu-link{font-size:18px}.nav__menu-item{margin-bottom:0}
+		</style>
+
+		<style media="screen and (max-width: 1024px)">
+			.hero .hero__body{margin-bottom:50px}
+		</style>
+
+		<link
+			type="text/css"
+			rel="preload"
+			as="style"
+			href="css/style.css"
+			onload="this.load=null;this.rel='stylesheet'"
+		/>
+
+		<noscript>
+			<link
+				type="text/css"
+				rel="stylesheet"
+				href="css/style.css"
+			/>
+		</noscript>
+
+		<!-- Slick carousel -->
+		<link type="text/css" rel="stylesheet" href="slick/slick.min.css" />
+		<link type="text/css" rel="stylesheet" href="slick/slick-theme.min.css" />
+		<link type="text/css" rel="stylesheet" href="css/slick-customize.min.css" />
+
+		<script>
+			/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+			(function(a){if(!a.loadCSS){a.loadCSS=function(){}}var b=loadCSS.relpreload={};b.support=(function(){var d;try{d=a.document.createElement("link").relList.supports("preload")}catch(f){d=false}return function(){return d}})();b.bindMediaToggle=function(e){var f=e.media||"all";function d(){e.media=f}if(e.addEventListener){e.addEventListener("load",d)}else{if(e.attachEvent){e.attachEvent("onload",d)}}setTimeout(function(){e.rel="stylesheet";e.media="only x"});setTimeout(d,3000)};b.poly=function(){if(b.support()){return}var d=a.document.getElementsByTagName("link");for(var e=0;e<d.length;e++){var f=d[e];if(f.rel==="preload"&&f.getAttribute("as")==="style"&&!f.getAttribute("data-loadcss")){f.setAttribute("data-loadcss",true);b.bindMediaToggle(f)}}};if(!b.support()){b.poly();var c=a.setInterval(b.poly,500);if(a.addEventListener){a.addEventListener("load",function(){b.poly();a.clearInterval(c)})}else{if(a.attachEvent){a.attachEvent("onload",function(){b.poly();a.clearInterval(c)})}}}if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}else{a.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this));
+		</script>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<header class="header container">
+			<nav class="nav">
+				<a class="brand-logo" href="#"><img type="image/svg+xml" src="img/logo-white.svg" alt="Logo" /></a>
+				<ul class="nav__menu">
+					<li class="nav__menu-item">
+						<a href="#" class="nav__menu-link">Projects</a>
+					</li>
+					<li class="nav__menu-item">
+						<a href="#" class="nav__menu-link">Partners</a>
+					</li>
+					<li class="nav__menu-item">
+						<a href="#" class="nav__menu-link">FAQ</a>
+					</li>
+					<li class="nav__menu-item">
+						<a href="#" class="nav__menu-link">Masters</a>
+					</li>
+					<li class="nav__menu-item">
+						<a href="#" class="nav__menu-link">Classes</a>
+					</li>
+					<li class="nav__menu-item">
+						<a href="#" class="nav__menu-link">Course Experience</a>
+					</li>
+					<li class="nav__menu-item">
+						<a href="#" class="nav__menu-link">About Us</a>
+					</li>
+				</ul>
+				<div class="nav__buttons row">
+					<a class="nav__button--register" id="register" href="#">Register</a>
+					<a class="button--burger-menu"><span></span></a>
+				</div>
+			</nav>
+		</header>
+
+		<div class="modal-register">
+			<div class="form-sign-up">
+				<span class="modal-close"></span>
+				<h2 class="form__title">Sign In</h2>
+				<form class="form row" action="">
+					<div class="form__column">
+						<label class="form__label" for="email">E-mail</label>
+						<input class="form__input" id="email" type="email" name="email" placeholder="E-mail"/>
+						<label class="form__label" for="password">Password</label>
+						<input class="form__input" id="password"  type="password" name="password" placeholder="Password" />
+					</div>
+					<div class="form__column">
+						<label class="form__label" for="name">Name</label>
+						<input class="form__input" id="name" type="text" name="name" placeholder="Full Name"/>
+						<label class="form__label" for="login">Login</label>
+						<input class="form__input" id="login" type="text" name="login" placeholder="Login"/>
+					</div>
+					<input class="button form__button" type="button" name="submit" value="Sign up"/>
+				</form>
+			</div>
+		</div>
+
+		<main class="container" role="main">
+			<section class="hero card section-wrapper">
+				<div class="row">
+					<div class="hero__column">
+						<div class="hero__body">
+							<h1 class="hero__title">Product Design Course</h1>
+							<p class="hero__subtitle">Product Factory</p>
+							<p class="hero__text">
+								Learn how design thinking, user research, business vision and
+								marketing, and finally designing and creating real digital
+								products for real users.
+							</p>
+							<button class="button button--call-to-action">Start Register</button>
+						</div>
+					</div>
+					<div class="hero__column">
+						<div class="hero__image image-wrapper">
+							<picture>
+								<img src="img/content/hero_image.png" alt="Hero" />
+							</picture>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="about card section-wrapper">
+				<div class="row">
+					<div class="about__column">
+						<div class="about__img image-wrapper">
+							<picture>
+								<source type="image/svg+xml" srcset="img/content/content-1.png">
+								<img src="img/content/content-1.png" alt="Content-1" />
+							</picture>
+						</div>
+					</div>
+					<div class="about__column">
+						<div class="about__body">
+							<h3 class="section__title">About us</h3>
+							<ul class="social-list">
+								<li class="social-list__item">
+									<a href="#"><img src="img/icons/facebook-square-brands-black.svg" alt="facebook" /></a>
+								</li>
+								<li class="social-list__item">
+									<a href="#"><img src="img/icons/instagram-brands-black.svg" alt="instagram" /></a>
+								</li>
+								<li class="social-list__item">
+									<a href="#"><img src="img/icons/twitter-brands-black.svg" alt="twitter" /></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<p class="about__text">
+					Today, given the economic and labor market conditions, the best and
+					least risky way to invest is to invest in personal assets and
+					skills. UI / UX Product Design Course covers all aspects of product
+					design from product thinking and design to user-centric research and
+					product research and business vision and digital marketing to
+					product designers and creators, designing the end-user experience
+					and interface of the product and how to deliver it. Includes. In
+					this course, we have tried to use the presence of successful and
+					experienced experts in each of the above mentioned areas to engage
+					in more specialized interaction as a mentor. This course is
+					project-oriented and participants in several product teams are
+					working to improve their product quality. And then start competing
+					with other teams in a healthy, learning-filled competition. Finally,
+					after the final exam and competition, participants will be awarded a
+					Certificate of Product Factory certification.
+				</p>
+			</section>
+
+			<section class="features card section-wrapper">
+				<h3 class="section__title">Course Experience</h3>
+				<ul class="feature-tabs">
+					<li class="feature-tabs__item">After attending the course</li>
+					<li class="feature-tabs__item">During the period</li>
+					<li class="feature-tabs__item active">Before attending the course</li>
+				</ul>
+				<div class="features__row row">
+					<div class="features__column">
+						<div class="features__image image-wrapper">
+							<picture>
+								<source type="image/svg+xml" srcset="img/content/content-2.svg">
+								<img src="img/content/content-2.png" alt="Content-2" />
+							</picture>
+						</div>
+					</div>
+					<div class="features__column">
+						<p class="features__text">
+							This course has been attempted by zero people who are eager to
+							learn product design, especially user experience and user
+							interface, so it is not a prerequisite, but due to the limited
+							capacity of the priority course with early enrolled people,
+							others can participate in future courses. .  Obviously, the
+							ability to use tools like Adobe Photoshop and Adobe Illustrator
+							as well as Microsoft Word, Excel tools, and of course a lot of
+							enthusiasm and energy,
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="sessions section-wrapper">
+				<h3 class="section__title">Sessions</h3>
+				<ul class="sessions-list">
+					<li class="sessions-list__item">
+						<div class="sessions__header header">
+							<h4 class="header__title">First Session</h4>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/clock.svg" />
+								Duration:
+								6 hour
+							</p>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/calendar.svg" />
+								Date:
+								November 5
+							</p>
+							<a class="header__link" href="#">
+								<img class="sessions__header-icon" src="img/icons/play-circle.svg" />
+								View Video
+							</a>
+						</div>
+						<div class="sessions__content">
+							<div class="sessions__content-img">
+								<picture>
+									<source srcset="img/team-members/member1.webp">
+									<img src="img/team-members/member1.jpg" />
+								</picture>
+							</div>
+							<p class="sessions__content-text">
+								In the first session, we will consider design thinking and its
+								understanding as well as different models of design thinking
+								and the design process, and we will better remember this
+								process with various examples. We will also discuss problem
+								solving techniques together and understand the concept of user
+								experience and usability.
+							</p>
+						</div>
+					</li>
+					<li class="sessions-list__item">
+						<div class="sessions__header header">
+							<h4 class="header__title">Second Session</h4>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/clock.svg" />
+								Duration:
+								6 hour
+							</p>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/calendar.svg" />
+								Date:
+								November 5
+							</p>
+							<a class="header__link" href="#">
+								<img class="sessions__header-icon" src="img/icons/play-circle.svg" />
+								View Video
+							</a>
+						</div>
+						<div class="sessions__content">
+							<div class="sessions__content-img">
+								<picture>
+									<source srcset="img/team-members/member4.webp">
+									<img src="img/team-members/member4.jpg" />
+								</picture>
+							</div>
+							<p class="sessions__content-text">
+								In the second session, we will discuss service design, first
+								discussing “What is a service?” Then we practice how to create
+								the right conditions for them in the long run to stay loyal to
+								our product based on the actual needs of our audience and to
+								create solutions that will reduce the hassle of the user in
+								the short run. We are also going to create a way to measure
+								the performance of our product so that we can ensure the
+								quality of the design solution’s performance.
+							</p>
+						</div>
+					</li>
+					<li class="sessions-list__item">
+						<div class="sessions__header header">
+							<h4 class="header__title">Third Session</h4>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/clock.svg" />
+								Duration:
+								6 hour
+							</p>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/calendar.svg" />
+								Date:
+								November 5
+							</p>
+							<a class="header__link" href="#">
+								<img class="sessions__header-icon" src="img/icons/play-circle.svg" />
+								View Video
+							</a>
+						</div>
+						<div class="sessions__content">
+							<div class="sessions__content-img">
+								<picture>
+									<source srcset="img/team-members/member2.webp">
+									<img src="img/team-members/member2.jpg" />
+								</picture>
+							</div>
+							<p class="sessions__content-text">
+								In the third session we will discuss the most important design
+								phase, which is the initial research and review process. We
+								will explore user experience research and user research
+								methods. At the end of the session we will be able to build
+								user personas as well as user scenarios and narrated user
+								stories in the product.
+							</p>
+						</div>
+					</li>
+					<li class="sessions-list__item">
+						<div class="sessions__header header">
+							<h4 class="header__title">Fourth Session</h4>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/clock.svg" />
+								Duration:
+								6 hour
+							</p>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/calendar.svg" />
+								Date:
+								November 5
+							</p>
+							<a class="header__link" href="#">
+								<img class="sessions__header-icon" src="img/icons/play-circle.svg" />
+								View Video
+							</a>
+						</div>
+						<div class="sessions__content">
+							<div class="sessions__content-img">
+								<picture>
+									<source srcset="img/team-members/member6.webp">
+									<img src="img/team-members/member6.jpg" />
+								</picture>
+							</div>
+							<p class="sessions__content-text">
+								Building experience is one of the key points in product
+								management and design. But how does this experience come
+								about? The experience is made by creating a unique feeling in
+								the mind. In the fourth session, we will learn how to identify
+								users’ behavior and motivate them as well as build stimuli to
+								drive the minds of the target audience together.
+							</p>
+						</div>
+					</li>
+					<li class="sessions-list__item">
+						<div class="sessions__header header">
+							<h4 class="header__title">Fifth Session</h4>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/clock.svg" />
+								Duration:
+								6 hour
+							</p>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/calendar.svg" />
+								Date:
+								November 5
+							</p>
+							<a class="header__link" href="#">
+								<img class="sessions__header-icon" src="img/icons/play-circle.svg" />
+								View Video
+							</a>
+						</div>
+						<div class="sessions__content">
+							<div class="sessions__content-img">
+								<picture>
+									<source srcset="img/team-members/member2.webp">
+									<img src="img/team-members/member2.jpg" />
+								</picture>
+								<picture>
+									<source srcset="img/team-members/member3.webp">
+									<img src="img/team-members/member3.jpg" />
+								</picture>
+							</div>
+							<p class="sessions__content-text">
+								Building experience is one of the key points in product
+								management and design. But how does this experience come
+								about? The experience is made by creating a unique feeling in
+								the mind. In the fourth session, we will learn how to identify
+								users’ behavior and motivate them as well as build stimuli to
+								drive the minds of the target audience together.
+							</p>
+						</div>
+					</li>
+					<li class="sessions-list__item">
+						<div class="sessions__header header">
+							<h4 class="header__title">Sixth Session</h4>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/clock.svg" />
+								Duration:
+								6 hour
+							</p>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/calendar.svg" />
+								Date:
+								November 5
+							</p>
+							<a class="header__link" href="#">
+								<img class="sessions__header-icon" src="img/icons/play-circle.svg" />
+								View Video
+							</a>
+						</div>
+						<div class="sessions__content">
+							<div class="sessions__content-img">
+								<picture>
+									<source srcset="img/team-members/member7.webp">
+									<img src="img/team-members/member7.jpg" />
+								</picture>
+								<picture>
+									<source srcset="img/team-members/member1.webp">
+									<img src="img/team-members/member1.jpg" />
+								</picture>
+							</div>
+							<p class="sessions__content-text">
+								Today, the world is a world of interaction, in the sixth
+								session we understand users trying to find the best way to
+								interact with them and bring the emotions, perceptions, and
+								awareness of the users to the forefront. We will explore the
+								concept of Interaction Design and also explore it in terms of
+								user experience design, usability and intuitive interface
+								design. In the second part of the sixth session, we go into
+								marketing and practice the marketing strategy of digital
+								products together, as well as discussing the appropriate
+								digital marketing toolkit.
+							</p>
+						</div>
+					</li>
+					<li class="sessions-list__item">
+						<div class="sessions__header header">
+							<h4 class="header__title">Seventh Session</h4>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/clock.svg" />
+								Duration:
+								6 hour
+							</p>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/calendar.svg" />
+								Date:
+								November 5
+							</p>
+							<a class="header__link" href="#">
+								<img class="sessions__header-icon" src="img/icons/play-circle.svg" />
+								View Video
+							</a>
+						</div>
+						<div class="sessions__content">
+							<div class="sessions__content-img">
+								<picture>
+									<source srcset="img/team-members/member10.webp">
+									<img src="img/team-members/member10.jpg" />
+								</picture>
+							</div>
+							<p class="sessions__content-text">
+								In the seventh session, we are in the world of product
+								management. We will examine software companies’ structures as
+								well as in-team and in-team interactions. In this session, we
+								will look at the duties and characteristics of product team
+								members as well as identify product strategies and learn about
+								different software development methodologies. And finally,
+								we’ll look at a product designer’s red line.
+							</p>
+						</div>
+					</li>
+					<li class="sessions-list__item">
+						<div class="sessions__header header">
+							<h4 class="header__title">Eighth Session</h4>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/clock.svg" />
+								Duration:
+								6 hour
+							</p>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/calendar.svg" />
+								Date:
+								November 5
+							</p>
+							<a class="header__link" href="#">
+								<img class="sessions__header-icon" src="img/icons/play-circle.svg" />
+								View Video
+							</a>
+						</div>
+						<div class="sessions__content">
+							<div class="sessions__content-img">
+								<picture>
+									<source srcset="img/team-members/member9.webp">
+									<img src="img/team-members/member9.jpg" />
+								</picture>
+								<picture>
+									<source srcset="img/team-members/member6.webp">
+									<img src="img/team-members/member6.jpg" />
+								</picture>
+							</div>
+							<p class="sessions__content-text">
+								In this session, we will get our hands into the color, learn
+								the basics of user interface design with colored hands, and
+								learn about various interface design tools. We also explore
+								the concepts and fundamentals of iconography and learn about
+								testing the usability of icon design and finally learn the
+								process of visualization in digital products from idea to
+								implementation.
+							</p>
+						</div>
+					</li>
+					<li class="sessions-list__item">
+						<div class="sessions__header header">
+							<h4 class="header__title">Ninth Session</h4>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/clock.svg" />
+								Duration:
+								6 hour
+							</p>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/calendar.svg" />
+								Date:
+								November 5
+							</p>
+							<a class="header__link" href="#">
+								<img class="sessions__header-icon" src="img/icons/play-circle.svg" />
+								View Video
+							</a>
+						</div>
+						<div class="sessions__content">
+							<div class="sessions__content-img">
+								<picture>
+									<source srcset="img/team-members/member9.webp">
+									<img src="img/team-members/member9.jpg" />
+								</picture>
+								<picture>
+									<source srcset="img/team-members/member5.webp">
+									<img src="img/team-members/member5.jpg" />
+								</picture>
+							</div>
+							<p class="sessions__content-text">
+								In the ninth session we will continue to immerse ourselves in
+								the world of color and image, identifying the elements of the
+								interface and learning how to properly represent the data. We
+								also remotely team up with Moslem Ebrahimi, a typeface
+								designer, and look at the typography of digital products from
+								the perspective of someone who has had a lifetime of concern
+								for typefaces and Persian fonts.
+							</p>
+						</div>
+					</li>
+					<li class="sessions-list__item">
+						<div class="sessions__header header">
+							<h4 class="header__title">Tenth Session</h4>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/clock.svg" />
+								Duration:
+								6 hour
+							</p>
+							<p class="header__subtitle">
+								<img class="sessions__header-icon" src="img/icons/calendar.svg" />
+								Date:
+								November 5
+							</p>
+							<a class="header__link" href="#">
+								<img class="sessions__header-icon" src="img/icons/play-circle.svg" />
+								View Video
+							</a>
+						</div>
+						<div class="sessions__content">
+							<div class="sessions__content-img">
+								<picture>
+									<source srcset="img/team-members/member9.webp">
+									<img src="img/team-members/member9.jpg" />
+								</picture>
+							</div>
+							<p class="sessions__content-text">
+								In the 10th session we will start with the software and
+								together we will learn what design software capabilities are
+								and what ideas can be made with them and that they are not as
+								complex as the cockpit!
+							</p>
+						</div>
+					</li>
+				</ul>
+			</section>
+
+			<section class="team card section-wrapper">
+				<h3 class="section__title">Masters</h3>
+				<ul class="members-list">
+					<li class="members-list__item">
+						<div class="member-card">
+							<div class="member__img image-wrapper">
+								<picture>
+									<source srcset="img/team-members/member1.webp">
+									<img src="img/team-members/member1.jpg" alt="Shervin Mashayekh" />
+								</picture>
+							</div>
+							<div class="member-about">
+								<div class="row member-social-links">
+									<a href="#">
+										<img src="img/icons/facebook-square-brands-white.svg" alt="facebook" />
+									</a>
+									<a href="#">
+										<img src="img/icons/instagram-brands-white.svg" alt="instagram" />
+									</a>
+									<a href="#">
+										<img src="img/icons/twitter-brands-white.svg" alt="twitter" />
+									</a>
+								</div>
+								<a href="#" class="member-about__button">
+									<img src="img/icons/about-master.svg" />
+									About Master
+								</a>
+							</div>
+						</div>
+						<p class="member-name">Shervin Mashayekh</p>
+						<p class="member-text">Additive Product Manager</p>
+					</li>
+					<li class="members-list__item">
+						<div class="member-card">
+							<div class="member__img image-wrapper">
+								<picture>
+									<source srcset="img/team-members/member2.webp">
+									<img src="img/team-members/member2.jpg" alt="Kianoosh Keyghobadi" />
+								</picture>
+							</div>
+							<div class="member-about">
+								<div class="row member-social-links">
+									<a href="#">
+										<img src="img/icons/facebook-square-brands-white.svg" alt="facebook" />
+									</a>
+									<a href="#">
+										<img src="img/icons/instagram-brands-white.svg" alt="instagram" />
+									</a>
+									<a href="#">
+										<img src="img/icons/twitter-brands-white.svg" alt="twitter" />
+									</a>
+								</div>
+								<a href="#" class="member-about__button">
+									<img src="img/icons/about-master.svg" />
+									About Master
+								</a>
+							</div>
+						</div>
+						<p class="member-name">Kianoosh Keyghobadi</p>
+						<p class="member-text">Product Manager at Digikala</p>
+					</li>
+					<li class="members-list__item">
+						<div class="member-card">
+							<div class="member__img image-wrapper">
+								<picture>
+									<source srcset="img/team-members/member3.webp">
+									<img src="img/team-members/member3.jpg" alt="Hossein Vahdani" />
+								</picture>
+							</div>
+							<div class="member-about">
+								<div class="row member-social-links">
+									<a href="#">
+										<img src="img/icons/facebook-square-brands-white.svg" alt="facebook" />
+									</a>
+									<a href="#">
+										<img src="img/icons/instagram-brands-white.svg" alt="instagram" />
+									</a>
+									<a href="#">
+										<img src="img/icons/twitter-brands-white.svg" alt="twitter" />
+									</a>
+								</div>
+								<a href="#" class="member-about__button">
+									<img src="img/icons/about-master.svg" />
+									About Master
+								</a>
+							</div>
+						</div>
+						<p class="member-name">Hossein Vahdani</p>
+						<p class="member-text">Content marketing specialist</p>
+					</li>
+					<li class="members-list__item">
+						<div class="member-card">
+							<div class="member__img image-wrapper">
+								<picture>
+									<source srcset="img/team-members/member4.webp">
+									<img src="img/team-members/member4.jpg" alt="Ali Babaei" />
+								</picture>
+							</div>
+							<div class="member-about">
+								<div class="row member-social-links">
+									<a href="#">
+										<img src="img/icons/facebook-square-brands-white.svg" alt="facebook" />
+									</a>
+									<a href="#">
+										<img src="img/icons/instagram-brands-white.svg" alt="instagram" />
+									</a>
+									<a href="#">
+										<img src="img/icons/twitter-brands-white.svg" alt="twitter" />
+									</a>
+								</div>
+								<a href="#" class="member-about__button">
+									<img src="img/icons/about-master.svg" />
+									About Master
+								</a>
+							</div>
+						</div>
+						<p class="member-name">Ali Babaei</p>
+						<p class="member-text">Product design consultant</p>
+					</li>
+					<li class="members-list__item">
+						<div class="member-card">
+							<div class="member__img image-wrapper">
+								<picture>
+									<source srcset="img/team-members/member5.webp">
+									<img src="img/team-members/member5.jpg" alt="Kiarash Amalivand" />
+								</picture>
+							</div>
+							<div class="member-about">
+								<div class="row member-social-links">
+									<a href="#">
+										<img src="img/icons/facebook-square-brands-white.svg" alt="facebook" />
+									</a>
+									<a href="#">
+										<img src="img/icons/instagram-brands-white.svg" alt="instagram" />
+									</a>
+									<a href="#">
+										<img src="img/icons/twitter-brands-white.svg" alt="twitter" />
+									</a>
+								</div>
+								<a href="#" class="member-about__button">
+									<img src="img/icons/about-master.svg" />
+									About Master
+								</a>
+							</div>
+						</div>
+						<p class="member-name">Kiarash Amalivand</p>
+						<p class="member-text">Head of product at Ap</p>
+					</li>
+					<li class="members-list__item">
+						<div class="member-card">
+							<div class="member__img image-wrapper">
+								<picture>
+									<source srcset="img/team-members/member6.webp">
+									<img src="img/team-members/member6.jpg" alt="Hesam Keramati" />
+								</picture>
+							</div>
+							<div class="member-about">
+								<div class="row member-social-links">
+									<a href="#">
+										<img src="img/icons/facebook-square-brands-white.svg" alt="facebook" />
+									</a>
+									<a href="#">
+										<img src="img/icons/instagram-brands-white.svg" alt="instagram" />
+									</a>
+									<a href="#">
+										<img src="img/icons/twitter-brands-white.svg" alt="twitter" />
+									</a>
+								</div>
+								<a href="#" class="member-about__button">
+									<img src="img/icons/about-master.svg" />
+									About Master
+								</a>
+							</div>
+						</div>
+						<p class="member-name">Hesam Keramati</p>
+						<p class="member-text">Product designer at Bazaar</p>
+					</li>
+					<li class="members-list__item">
+						<div class="member-card">
+							<div class="member__img image-wrapper">
+								<picture>
+									<source srcset="img/team-members/member7.webp">
+									<img src="img/team-members/member7.jpg" alt="Hassan Hemati" />
+								</picture>
+							</div>
+							<div class="member-about">
+								<div class="row member-social-links">
+									<a href="#">
+										<img src="img/icons/facebook-square-brands-white.svg" alt="facebook" />
+									</a>
+									<a href="#">
+										<img src="img/icons/instagram-brands-white.svg" alt="instagram" />
+									</a>
+									<a href="#">
+										<img src="img/icons/twitter-brands-white.svg" alt="twitter" />
+									</a>
+								</div>
+								<a href="#" class="member-about__button">
+									<img src="img/icons/about-master.svg" />
+									About Master
+								</a>
+							</div>
+						</div>
+						<p class="member-name">Hassan Hemati</p>
+						<p class="member-text">Product designer at Alibaba</p>
+					</li>
+					<li class="members-list__item">
+						<div class="member-card">
+							<div class="member__img image-wrapper">
+								<picture>
+									<source srcset="img/team-members/member8.webp">
+									<img src="img/team-members/member8.jpg" alt="Sheragim Moradi" />
+								</picture>
+							</div>
+							<div class="member-about">
+								<div class="row member-social-links">
+									<a href="#">
+										<img src="img/icons/facebook-square-brands-white.svg" alt="facebook" />
+									</a>
+									<a href="#">
+										<img src="img/icons/instagram-brands-white.svg" alt="instagram" />
+									</a>
+									<a href="#">
+										<img src="img/icons/twitter-brands-white.svg" alt="twitter" />
+									</a>
+								</div>
+								<a href="#" class="member-about__button">
+									<img src="img/icons/about-master.svg" />
+									About Master
+								</a>
+							</div>
+						</div>
+						<p class="member-name">Sheragim Moradi</p>
+						<p class="member-text">Marketing manager</p>
+					</li>
+					<li class="members-list__item">
+						<div class="member-card">
+							<div class="member__img image-wrapper">
+								<picture>
+									<source srcset="img/team-members/member9.webp">
+									<img src="img/team-members/member9.jpg" alt="Hadi Ebnodin" />
+								</picture>
+							</div>
+							<div class="member-about">
+								<div class="row member-social-links">
+									<a href="#">
+										<img src="img/icons/facebook-square-brands-white.svg" alt="" />
+									</a>
+									<a href="#">
+										<img src="img/icons/instagram-brands-white.svg" alt="" />
+									</a>
+									<a href="#">
+										<img src="img/icons/twitter-brands-white.svg" alt="" />
+									</a>
+								</div>
+								<a href="#" class="member-about__button">
+									<img src="img/icons/about-master.svg" />
+									About Master
+								</a>
+							</div>
+						</div>
+						<p class="member-name">Hadi Ebnodin</p>
+						<p class="member-text">Service designer</p>
+					</li>
+					<li class="members-list__item">
+						<div class="member-card">
+							<div class="member__img image-wrapper">
+								<picture>
+									<source srcset="img/team-members/member10.webp">
+									<img src="img/team-members/member10.jpg" alt="Moslem Ebrahimi" />
+								</picture>
+							</div>
+							<div class="member-about">
+								<div class="row member-social-links">
+									<a href="#">
+										<img src="img/icons/facebook-square-brands-white.svg" alt="facebook" />
+									</a>
+									<a href="#">
+										<img src="img/icons/instagram-brands-white.svg" alt="instagram" />
+									</a>
+									<a href="#">
+										<img src="img/icons/twitter-brands-white.svg" alt="twitter" />
+									</a>
+								</div>
+								<a href="#" class="member-about__button">
+									<img src="img/icons/about-master.svg" />
+									About Master
+								</a>
+							</div>
+						</div>
+						<p class="member-name">Moslem Ebrahimi</p>
+						<p class="member-text">Typeface designer</p>
+					</li>
+				</ul>
+			</section>
+
+			<section class="faq section-wrapper">
+				<h3 class="section__title">FAQ</h3>
+				<ul class="faq-list">
+					<li class="faq-list__item card">
+						<div class="faq-list__item-head row">
+							<p class="faq-list__item-text">
+								Does this course need any special requirements?
+							</p>
+						</div>
+						<div class="faq-list__item-body">
+							<p class="faq-list__item-text">
+								Lorem ipsum dolor sit, amet consectetur
+								adipisicing elit. Est odit perferendis
+								atque iste modi iusto aut dolores, accusantium
+								ducimus accusamus, aperiam facilis commodi
+								ipsum praesentium.
+							</p>
+						</div>
+					</li>
+					<li class="faq-list__item card">
+						<div class="faq-list__item-head row">
+							<p class="faq-list__item-text">
+								Who are the audiences of the product design period of the
+								product factory?
+							</p>
+						</div>
+						<div class="faq-list__item-body">
+							<p class="faq-list__item-text">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias repudiandae quisquam suscipit maiores perspiciatis, obcaecati recusandae officia, ex dolor cupiditate commodi pariatur vitae sint temporibus quis quae excepturi numquam eaque. Saepe iusto sunt sit, optio doloremque quos. Impedit eum temporibus soluta ut corporis, perferendis magni sapiente dolorum, quidem rem aliquid.
+							</p>
+						</div>
+					</li>
+					<li class="faq-list__item card">
+						<div class="faq-list__item-head row">
+							<p class="faq-list__item-text">
+								Is it possible to pay by installments?
+							</p>
+						</div>
+						<div class="faq-list__item-body">
+							<p class="faq-list__item-text">
+								Lorem ipsum dolor sit, amet consectetur
+								adipisicing elit. Est odit perferendis
+								atque iste modi iusto aut dolores, accusantium
+								ducimus accusamus, aperiam facilis commodi
+								ipsum praesentium.
+							</p>
+						</div>
+					</li>
+					<li class="faq-list__item card">
+						<div class="faq-list__item-head row">
+							<p class="faq-list__item-text">
+								Can I start an internship after I finish the course?
+							</p>
+						</div>
+						<div class="faq-list__item-body">
+							<p class="faq-list__item-text">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis velit ab non repellat sunt error itaque nemo cumque magnam. Velit debitis fugiat natus perferendis nam magni ullam asperiores voluptatibus. Eveniet mollitia optio, eligendi cupiditate dolorem possimus nam dolor tenetur corporis. Facere, quaerat inventore atque tenetur eveniet consequatur soluta blanditiis mollitia quos ipsam deserunt voluptas fuga velit cupiditate illo quidem, unde sequi maiores! Laudantium cum ad odio ullam! Quia placeat porro dicta aliquid animi rerum incidunt, officiis, beatae reiciendis excepturi harum?
+							</p>
+						</div>
+					</li>
+					<li class="faq-list__item card">
+						<div class="faq-list__item-head row">
+							<p class="faq-list__item-text">
+								What should I do after I finish the course?
+							</p>
+						</div>
+						<div class="faq-list__item-body">
+							<p class="faq-list__item-text">
+								Lorem ipsum dolor sit, amet consectetur
+								adipisicing elit. Est odit perferendis
+								atque iste modi iusto aut dolores, accusantium
+								ducimus accusamus, aperiam facilis commodi
+								ipsum praesentium.
+							</p>
+						</div>
+					</li>
+				</ul>
+			</section>
+
+			<section class="price card section-wrapper">
+				<h3 class="section__title">Course fee</h3>
+				<div class="row">
+					<div class="price__column">
+						<h3 class="price__title">
+							What will be our achievements by participating in this course?
+						</h3>
+						<ul class="price-list">
+							<li class="price-list__item">
+								<img class="price-list__marker" src="img/icons/bulletz.svg">
+								Learn the requirements of a product designer from experienced
+								professionals in the field.
+							</li>
+							<li class="price-list__item">
+								<img class="price-list__marker" src="img/icons/bulletz.svg">
+								Experience in-team work and product designer interactions
+								within the real product team.
+							</li>
+							<li class="price-list__item">
+								<img class="price-list__marker" src="img/icons/bulletz.svg">
+								Experience working on projects with information and feature
+								lists and real user recognition.
+							</li>
+							<li class="price-list__item">
+								<img class="price-list__marker" src="img/icons/bulletz.svg">
+								Possibility to take Adobe exams upon completion of course and
+								upon registration.
+							</li>
+						</ul>
+					</div>
+					<div class="price__column">
+						<div class="price-card">
+							<p class="price-card__title--crossed">4,000,000 Toman</p>
+							<p class="price-card__title">2,300,000 Toman</p>
+							<p class="price-card__text">Possibility to pay periodic installment fee.</p>
+							<button class="button button--call-to-action price__button">Register</button>
+						</div>
+					</div>
+				</div>
+				<p class="price__text">
+					Possibility of refund prior to the third session if
+					the course quality is not satisfied.
+				</p>
+			</section>
+
+			<section class="contact-form section-wrapper">
+				<div class="row">
+					<div class="contact-form__column">
+						<div class="contact-form__body">
+							<h3 class="section__title--white">Request a list of headings</h3>
+							<p class="section__subtitle--white">
+								Please enter your email address to receive course titles,
+								the topics will be emailed to you
+							</p>
+							<form action="">
+								<input class="form__input" type="email" name="contact-email"
+									id="contact-email" placeholder="Enter your Email" />
+								<label class="email-checker" for="contact-email">
+									<img src="img/icons/bulletz.svg">
+									Your email...
+								</label>
+							</form>
+						</div>
+					</div>
+					<div class="contact-form__column">
+						<div class="contact-form__image">
+							<img src="img/envelope.svg" />
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="product">
+				<h3 class="section__title">Projects</h3>
+				<div class="row">
+					<div class="product__column column">
+						<div class="product-description">
+							<h3 class="product-description__title">Design To Do List app</h3>
+							<p class="product-description__text">
+								The previous student design project was the
+								To Do List application product factory,
+								The counter examples are the result of the efforts of
+								the students and their teamwork in the first course.
+							</p>
+							<ul class="product-description-list">
+								<li class="product-description-list__item">
+									<img src="img/icons/bulletz.svg" />
+									Experience teamwork in a real product team
+									and a collaborative effort for a common goal.
+								</li>
+								<li class="product-description-list__item">
+									<img src="img/icons/bulletz.svg" />
+									Survey real users and needs assessment and find
+									the most suitable solution to their problems.
+								</li>
+								<li class="product-description-list__item">
+									<img src="img/icons/bulletz.svg" />
+									Design experience from notebooks to user interface design software.
+								</li>
+							</ul>
+							<span class="product-counter">4 / 15</span>
+						</div>
+					</div>
+					<div class="product__column column">
+						<div class="product-gallery">
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+							<div class="product-gallery__item card"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="schedule section-wrapper">
+				<h3 class="section__title">Schedule</h3>
+				<div class="schedule-line row">
+					<p class="schedule-line__text">Start of course</p>
+					<span class="schedule-line--dashed"></span>
+					<p class="schedule-line__text">End of course</p>
+				</div>
+				<div class="schedule-duration row">
+					<div class="schedule-duration__text--date card" data-move="schedule">2019 / 08 / 11</div>
+					<div class="schedule-duration__text--date card" data-move="schedule">2019 / 11 / 11</div>
+				</div>
+				<div class="schedule-day-left">
+					<p class="schedule-day-left__text">
+						<span class="schedule-day-counter">11</span>
+						Days left to sign up
+					</p>
+					<button class="schedule-day-left__button button button--call-to-action">Register</button>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer container">
+			<div class="row">
+				<ul class="footer-list">
+					<li class="footer-list__item">
+						<a class="social-link" href="#"><img src="img/icons/facebook-square-brands-black.svg" alt="facebook"></a>
+					</li>
+					<li class="footer-list__item">
+						<a class="social-link" href="#"><img src="img/icons/instagram-brands-black.svg" alt="instagram"></a>
+					</li>
+					<li class="footer-list__item">
+						<a class="social-link" href="#"><img src="img/icons/twitter-brands-black.svg" alt="twitter"></a>
+					</li>
+				</ul>
+				<div class="brand-logo">
+					<a href="#"><img src="img/logo-black.svg" alt="logo"></a>
+				</div>
+				<div class="contact-number">Text +555-4552-245</div>
+			</div>
+		</footer>
+
+		<!-- JQuery min -->
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<!-- Slick slider -->
+		<script src="slick/slick.min.js"></script>
+
+		<script src="js/script.min.js"></script>
+	</body>
+</html>
